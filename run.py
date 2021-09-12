@@ -1,3 +1,4 @@
+import os
 from telegram.ext import Updater , MessageHandler , Filters
 
 def demo1(bot,update):
@@ -40,7 +41,7 @@ def main(bot,update):
     demo4(bot,update)
     b=0
 
-bot_token = '1977456057:AAGCRikNBGbx3Hx_Ev8ve8XFJVUaUnnmXis'
+bot_token = os.getenv('bot_token)
 u = Updater(bot_token,use_context=True)
 dp = u.dispatcher
 dp.add_handler(MessageHandler(Filters.text,main))
